@@ -1,0 +1,171 @@
+/* تعريف متغيرات الألوان لسهولة التعديل */
+:root {
+    --rose-gold: #b76e79;
+    --light-pink: #e2a7ac;
+    --cream-bg: #fffaf9;
+    --dark-text: #5d4037;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--cream-bg);
+    color: var(--dark-text);
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(#fdf5ef);
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #f0e1e1;
+}
+
+.main-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    color: var(--rose-gold);
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: var(--light-pink);
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+/* العناوين المزخرفة */
+.title-decor {
+    text-align: center;
+    color: var(--rose-gold);
+    margin: 40px 0;
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.title-decor::after {
+    content: '✿';
+    display: block;
+    font-size: 1rem;
+    margin-top: 5px;
+    color: var(--light-pink);
+}
+
+/* About Us Section */
+.about-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(183, 110, 121, 0.05);
+    text-align: justify;
+    margin-bottom: 50px;
+}
+/* 1. تحديث الألوان في بداية الملف (تحت :root) */
+:root {
+    --rose-gold: #c58f80;   /* لون اللوجو */
+    --dark-bronze: #5d4037; /* لون الخط الغامق */
+    --bg-cream: #f9f1f0;    /* خلفية ناعمة */
+}
+
+/* 2. استبدل قسم الجاليري القديم بهذا الكود المنظم */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* شبكة منظمة */
+    gap: 25px; /* مسافة متساوية بين الصور */
+    padding: 20px 0;
+}
+
+.image-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1/1; /* بيخلي كل الصور مربعات قد بعض بالظبط */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* بيخلي الصورة تملأ المربع بشياكة */
+    transition: transform 0.5s ease;
+}
+
+/* حركة الارتفاع البسيطة اللي طلبتيها */
+.image-card:hover {
+    transform: translateY(-8px); /* تترفع لفوق حاجة بسيطة */
+    box-shadow: 0 10px 20px rgba(197, 143, 128, 0.2); /* ظل بلون الروز جولد */
+}
+
+.image-card:hover img {
+    transform: scale(1.05); /* زووم خفيف جداً للصورة */
+}
+/* تنسيق زر الواتساب */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px; /* المسافة من الأسفل */
+    left: 30px;   /* المسافة من اليسار */
+    background-color: #25d366; /* لون واتساب الرسمي */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px; /* لجعل الزر مستدير الأطراف */
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    z-index: 9999; /* لضمان ظهوره فوق كل الصور */
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease; /* سرعة حركة التأثير */
+}
+
+.whatsapp-btn img {
+    width: 25px;
+    height: 25px;
+}
+
+/* تأثير عند مرور الماوس (Hover) */
+.whatsapp-btn:hover {
+    transform: translateY(-5px); /* يرتفع قليلاً */
+    background-color: #1ebe57; /* لون أغمق قليلاً */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* تعديل الزر للموبايل ليصبح في المنتصف وواضح */
+@media (max-width: 600px) {
+    .whatsapp-btn {
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        justify-content: center;
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+}
+/* 3. تحديث التوافق مع الموبايل (في آخر ملف الـ CSS) */
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* صورتين في كل صف على الموبايل */
+        gap: 12px;
+    }
+}
